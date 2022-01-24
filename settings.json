@@ -54,6 +54,12 @@
 		"javascript": "javascriptreact"
 	},
 
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat"]
+	"cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat"],
+	"svg.preview.autoFit": false,
+	"svg.preview.autoShow": true,
+	"svg.preview.background": "editor",
+	"svg.preview.mode": "svg",
+	"svg.preview.showRuler": true,
+	"svg.preview.viewMode": "onlyOne",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
