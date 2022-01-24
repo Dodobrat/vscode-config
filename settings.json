@@ -1,0 +1,59 @@
+{
+	"workbench.colorTheme": "Eva Dark Italic",
+	"workbench.iconTheme": "material-icon-theme",
+
+	"editor.bracketPairColorization.enabled": true,
+	"editor.cursorBlinking": "solid",
+	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorStyle": "line",
+	"editor.cursorWidth": 2,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.dragAndDrop": false,
+	"editor.foldingImportsByDefault": false,
+	"editor.formatOnSave": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.hover.delay": 500,
+	"editor.inlineSuggest.enabled": true,
+	"editor.linkedEditing": true,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.padding.bottom": 100,
+	"editor.renderWhitespace": "all",
+	"editor.scrollBeyondLastLine": false,
+	"editor.suggestSelection": "first",
+	"editor.wordWrap": "on",
+
+	"breadcrumbs.enabled": false,
+
+	"explorer.confirmDelete": false,
+
+	"prettier.arrowParens": "always",
+	"prettier.bracketSameLine": false,
+	"prettier.bracketSpacing": true,
+	"prettier.endOfLine": "lf",
+	"prettier.jsxSingleQuote": true,
+	"prettier.printWidth": 120,
+	"prettier.quoteProps": "as-needed",
+	"prettier.semi": true,
+	"prettier.singleQuote": false,
+	"prettier.tabWidth": 4,
+	"prettier.trailingComma": "es5",
+	"prettier.useTabs": true,
+
+	"diffEditor.ignoreTrimWhitespace": false,
+	"diffEditor.renderSideBySide": true,
+	"gitlens.advanced.messages": {
+		"suppressCreatePullRequestPrompt": true
+	},
+	"git.confirmSync": true,
+	"git.enableSmartCommit": false,
+
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat"]
+}
