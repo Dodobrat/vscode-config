@@ -1,4 +1,7 @@
 {
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+
 	"workbench.colorTheme": "Eva Dark Italic",
 	"workbench.iconTheme": "material-icon-theme",
 
@@ -10,6 +13,7 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.dragAndDrop": false,
 	"editor.foldingImportsByDefault": false,
+	"editor.fontSize": 12,
 	"editor.formatOnSave": true,
 	"editor.guides.bracketPairs": "active",
 	"editor.hover.delay": 500,
@@ -31,7 +35,7 @@
 	"prettier.bracketSpacing": true,
 	"prettier.endOfLine": "lf",
 	"prettier.jsxSingleQuote": true,
-	"prettier.printWidth": 120,
+	"prettier.printWidth": 140,
 	"prettier.quoteProps": "as-needed",
 	"prettier.semi": true,
 	"prettier.singleQuote": false,
