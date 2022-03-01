@@ -26,6 +26,9 @@
 	"editor.suggestSelection": "first",
 	"editor.wordWrap": "on",
 
+	"errorLens.enabled": true,
+	"errorLens.statusBarIconsEnabled": true,
+
 	"breadcrumbs.enabled": false,
 
 	"explorer.confirmDelete": false,
@@ -58,7 +61,7 @@
 		"javascript": "javascriptreact"
 	},
 
-	"cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat"],
+	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid"],
 	"svg.preview.autoFit": false,
 	"svg.preview.autoShow": true,
 	"svg.preview.background": "editor",
