@@ -64,7 +64,7 @@
 	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid"],
 	"svg.preview.autoFit": false,
 	"svg.preview.autoShow": true,
-	"svg.preview.background": "editor",
+	"svg.preview.background": "dark-transparent",
 	"svg.preview.mode": "svg",
 	"svg.preview.showRuler": true,
 	"svg.preview.viewMode": "onlyOne",
