@@ -61,6 +61,8 @@
 		"javascript": "javascriptreact"
 	},
 
+	"html.preview.scrollPreviewWithEditor": false,
+	"html.preview.scrollEditorWithPreview": false,
 	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid"],
 	"svg.preview.autoFit": false,
 	"svg.preview.autoShow": true,
