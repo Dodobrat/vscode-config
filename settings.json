@@ -2,7 +2,7 @@
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 
-	"workbench.colorTheme": "Eva Dark Italic",
+	"workbench.colorTheme": "Eva Dark",
 	"workbench.iconTheme": "material-icon-theme",
 
 	"editor.bracketPairColorization.enabled": true,
@@ -29,7 +29,7 @@
 	"errorLens.enabled": true,
 	"errorLens.statusBarIconsEnabled": true,
 
-	"breadcrumbs.enabled": false,
+	"breadcrumbs.enabled": true,
 
 	"explorer.confirmDelete": false,
 
@@ -70,5 +70,6 @@
 	"svg.preview.mode": "svg",
 	"svg.preview.showRuler": true,
 	"svg.preview.viewMode": "onlyOne",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"timeline.excludeSources": []
 }
