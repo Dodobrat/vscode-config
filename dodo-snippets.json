@@ -1,0 +1,20 @@
+{
+	"Dodo React Component": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodorfce",
+		"body": ["export default function ${1:$TM_FILENAME_BASE}({}) {", "  return <div>${0:$TM_FILENAME_BASE}</div>;", "}"],
+		"description": "Dodo React Component snippet"
+	},
+	"Dodo React Typescript Component": {
+		"scope": "typescript, typescriptreact",
+		"prefix": "tsdodorfce",
+		"body": [
+			"type Props = {};",
+			"",
+			"export default function ${1:$TM_FILENAME_BASE}({}: Props) {",
+			"  return <div>${0:$TM_FILENAME_BASE}</div>;",
+			"}"
+		],
+		"description": "Dodo React Typescript Component snippet"
+	}
+}
