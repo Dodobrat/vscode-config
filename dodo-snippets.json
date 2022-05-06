@@ -1,20 +1,121 @@
 {
-	"Dodo React Component": {
+	"Dodo React Component Default Export": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorfce",
-		"body": ["export default function ${1:$TM_FILENAME_BASE}({}) {", "  return <div>${0:$TM_FILENAME_BASE}</div>;", "}"],
-		"description": "Dodo React Component snippet"
-	},
-	"Dodo React Typescript Component": {
-		"scope": "typescript, typescriptreact",
-		"prefix": "tsdodorfce",
+		"prefix": "dodorfcde",
 		"body": [
-			"type Props = {};",
-			"",
-			"export default function ${1:$TM_FILENAME_BASE}({}: Props) {",
+			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({}) {",
 			"  return <div>${0:$TM_FILENAME_BASE}</div>;",
 			"}"
 		],
-		"description": "Dodo React Typescript Component snippet"
+		"description": "Dodo React Component with default export snippet"
+	},
+	"Dodo React Component Export": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodorfce",
+		"body": [
+			"export function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({}) {",
+			"  return <div>${0:$TM_FILENAME_BASE}</div>;",
+			"}"
+		],
+		"description": "Dodo React Component with export snippet"
+	},
+	"Dodo React Hook Default Export": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodorfhde",
+		"body": ["export default function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}() {", "  return ${0:null};", "}"],
+		"description": "Dodo React Hook with default export snippet"
+	},
+	"Dodo React Hook Export": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodorfhe",
+		"body": ["export function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}() {", "  return ${0:null};", "}"],
+		"description": "Dodo React Hook with export snippet"
+	},
+	"Dodo React HOC": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodorhoc",
+		"body": [
+			"export default function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}(Component) {",
+			"  return function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}(props) {",
+			"    return (<Component {...props} />);",
+			"  }",
+			"}"
+		],
+		"description": "Dodo React HOC snippet"
+	},
+	"Dodo React Optimized Context": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodoroctx",
+		"body": [
+			"import { createContext, useState, useContext, useCallback } from 'react';",
+			"",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}StateContext = createContext(null);",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}UpdaterContext = createContext(null);",
+			"",
+			"function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider({ children }) {",
+			"  const [${1:state}, set${2:State}] = useState(${0:null});",
+			"",
+			"  return (",
+			"    <${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}StateContext.Provider value={${1:state}}>",
+			"      <${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}UpdaterContext.Provider value={set${2:State}}>",
+			"        {children}",
+			"      </${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}UpdaterContext.Provider>",
+			"    </${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}StateContext.Provider>",
+			"  );",
+			"}",
+			"",
+			"function use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State() {",
+			"  const contextState = useContext(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}StateContext);",
+			"  if (typeof contextState === 'undefined') {",
+			"    throw new Error('use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State must be used within a ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider');",
+			"  }",
+			"  return contextState;",
+			"}",
+			"",
+			"function use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Updater() {",
+			"  const contextUpdater = useContext(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}UpdaterContext);",
+			"  if (typeof contextUpdater === 'undefined') {",
+			"    throw new Error('use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Updater must be used within a ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider');",
+			"  }",
+			"  return useCallback(contextUpdater, [contextUpdater]);",
+			"}",
+			"",
+			"function use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}() {",
+			"  return [use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State(), use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Updater()];",
+			"}",
+			"",
+			"export { ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider, use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} };"
+		],
+		"description": "Dodo React Optimized Context snippet"
+	},
+	"Dodo React Context": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "dodorctx",
+		"body": [
+			"import { createContext, useState, useContext } from 'react';",
+			"",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Context = createContext(null);",
+			"",
+			"function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider({ children }) {",
+			"  const [${1:state}, set${2:State}] = useState(${0:null});",
+			"",
+			"  return (",
+			"    <${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Context.Provider value={[${1:state}, set${2:State}]}>",
+			"      {children}",
+			"    </${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Context.Provider>",
+			"  );",
+			"}",
+			"",
+			"function use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}() {",
+			"  const context = useContext(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Context);",
+			"  if (typeof context === 'undefined') {",
+			"    throw new Error('use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} must be used within a ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider');",
+			"  }",
+			"  return context;",
+			"}",
+			"",
+			"export { ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider, use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} };"
+		],
+		"description": "Dodo React Context snippet"
 	}
 }
