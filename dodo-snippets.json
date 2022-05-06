@@ -1,39 +1,85 @@
 {
-	"Dodo React Component Default Export": {
+	"Do Export Default as Named Module": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorfcde",
+		"prefix": "do_exdas",
+		"body": ["export { default as ${0} } from '${1}';"],
+		"description": "Do Export Default as Named Module snippet"
+	},
+	"Do Export Named Module": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "do_exn",
+		"body": ["export { ${0} } from '${1}';"],
+		"description": "Do Export Named Module snippet"
+	},
+	"Do Export All Named Modules": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "do_exall",
+		"body": ["export * from '${0}';"],
+		"description": "Do Export All Named Modules snippet"
+	},
+	"Do React Component Default Export": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "do_rcde",
 		"body": [
 			"export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({}) {",
 			"  return <div>${0:$TM_FILENAME_BASE}</div>;",
 			"}"
 		],
-		"description": "Dodo React Component with default export snippet"
+		"description": "Do React Component with default export snippet"
 	},
-	"Dodo React Component Export": {
+	"Do React Component Export": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorfce",
+		"prefix": "do_rce",
 		"body": [
 			"export function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({}) {",
 			"  return <div>${0:$TM_FILENAME_BASE}</div>;",
 			"}"
 		],
-		"description": "Dodo React Component with export snippet"
+		"description": "Do React Component with export snippet"
 	},
-	"Dodo React Hook Default Export": {
+	"Do React ForwardRef Component Default Export": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorfhde",
+		"prefix": "do_rfcde",
+		"body": [
+			"import { forwardRef } from 'react';",
+			"",
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({}, ref) {",
+			"  return <div ref={ref}>${0:$TM_FILENAME_BASE}</div>;",
+			"}",
+			"",
+			"export default forwardRef(${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}});"
+		],
+		"description": "Do React ForwardRef Component with default export snippet"
+	},
+	"Do React ForwardRef Component Export": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "do_rfce",
+		"body": [
+			"import { forwardRef } from 'react';",
+			"",
+			"function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({}, ref) {",
+			"  return <div ref={ref}>${0:$TM_FILENAME_BASE}</div>;",
+			"}",
+			"",
+			"export forwardRef(${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}});"
+		],
+		"description": "Do React ForwardRef Component with export snippet"
+	},
+	"Do React Hook Default Export": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "do_rhde",
 		"body": ["export default function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}() {", "  return ${0:null};", "}"],
-		"description": "Dodo React Hook with default export snippet"
+		"description": "Do React Hook with default export snippet"
 	},
-	"Dodo React Hook Export": {
+	"Do React Hook Export": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorfhe",
+		"prefix": "do_rhe",
 		"body": ["export function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}() {", "  return ${0:null};", "}"],
-		"description": "Dodo React Hook with export snippet"
+		"description": "Do React Hook with export snippet"
 	},
-	"Dodo React HOC": {
+	"Do React HOC Default Export": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorhoc",
+		"prefix": "do_rhocde",
 		"body": [
 			"export default function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}(Component) {",
 			"  return function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}(props) {",
@@ -41,11 +87,23 @@
 			"  }",
 			"}"
 		],
-		"description": "Dodo React HOC snippet"
+		"description": "Do React HOC with default export snippet"
 	},
-	"Dodo React Optimized Context": {
+	"Do React HOC Export": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodoroctx",
+		"prefix": "do_rhoce",
+		"body": [
+			"export function ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}(Component) {",
+			"  return function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}(props) {",
+			"    return (<Component {...props} />);",
+			"  }",
+			"}"
+		],
+		"description": "Do React HOC with export snippet"
+	},
+	"Do React Optimized Context": {
+		"scope": "javascript, typescript, javascriptreact, typescriptreact",
+		"prefix": "do_roctx",
 		"body": [
 			"import { createContext, useState, useContext, useCallback } from 'react';",
 			"",
@@ -86,11 +144,11 @@
 			"",
 			"export { ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider, use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} };"
 		],
-		"description": "Dodo React Optimized Context snippet"
+		"description": "Do React Optimized Context snippet"
 	},
-	"Dodo React Context": {
+	"Do React Context": {
 		"scope": "javascript, typescript, javascriptreact, typescriptreact",
-		"prefix": "dodorctx",
+		"prefix": "do_rctx",
 		"body": [
 			"import { createContext, useState, useContext } from 'react';",
 			"",
@@ -116,6 +174,6 @@
 			"",
 			"export { ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Provider, use${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} };"
 		],
-		"description": "Dodo React Context snippet"
+		"description": "Do React Context snippet"
 	}
 }
