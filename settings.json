@@ -2,8 +2,24 @@
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 
-	"workbench.colorTheme": "Eva Dark",
+	"workbench.colorTheme": "monokai-charcoal (gray)",
 	"workbench.iconTheme": "material-icon-theme",
+
+	"workbench.colorCustomizations": {
+		"[monokai-charcoal*]": {
+			"activityBar.activeBackground": "#222",
+			"activityBar.background": "#000",
+			"activityBar.foreground": "#fff",
+			"activityBar.inactiveForeground": "#aaa",
+			"activityBarBadge.background": "#777",
+			"activityBarBadge.foreground": "#fff",
+			"editorGroupHeader.tabsBorder": "#444",
+			"inputOption.activeBackground": "#555",
+			"inputOption.activeBorder": "#fff",
+			"inputOption.activeForeground": "#fff",
+			"tab.activeBackground": "#222"
+		}
+	},
 
 	"editor.bracketPairColorization.enabled": true,
 	"editor.cursorBlinking": "solid",
@@ -30,11 +46,40 @@
 	"errorLens.statusBarIconsEnabled": true,
 
 	"breadcrumbs.enabled": true,
+	"breadcrumbs.filePath": "on",
+	"breadcrumbs.icons": true,
+	"breadcrumbs.showArrays": false,
+	"breadcrumbs.showBooleans": false,
+	"breadcrumbs.showClasses": false,
+	"breadcrumbs.showConstants": false,
+	"breadcrumbs.showConstructors": false,
+	"breadcrumbs.showEnumMembers": false,
+	"breadcrumbs.showEnums": false,
+	"breadcrumbs.showEvents": false,
+	"breadcrumbs.showFields": false,
+	"breadcrumbs.showFiles": false,
+	"breadcrumbs.showFunctions": false,
+	"breadcrumbs.showInterfaces": false,
+	"breadcrumbs.showKeys": false,
+	"breadcrumbs.showMethods": false,
+	"breadcrumbs.showModules": false,
+	"breadcrumbs.showNamespaces": false,
+	"breadcrumbs.showNull": false,
+	"breadcrumbs.showNumbers": false,
+	"breadcrumbs.showObjects": false,
+	"breadcrumbs.showOperators": false,
+	"breadcrumbs.showPackages": false,
+	"breadcrumbs.showProperties": false,
+	"breadcrumbs.showStrings": false,
+	"breadcrumbs.showStructs": false,
+	"breadcrumbs.showTypeParameters": false,
+	"breadcrumbs.showVariables": false,
+	"breadcrumbs.symbolPath": "off",
+	"breadcrumbs.symbolSortOrder": "name",
 
 	"explorer.confirmDelete": false,
 
 	"prettier.arrowParens": "always",
-	"prettier.bracketSameLine": false,
 	"prettier.bracketSpacing": true,
 	"prettier.endOfLine": "lf",
 	"prettier.jsxSingleQuote": true,
@@ -61,8 +106,6 @@
 		"javascript": "javascriptreact"
 	},
 
-	"html.preview.scrollPreviewWithEditor": false,
-	"html.preview.scrollEditorWithPreview": false,
 	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid"],
 	"svg.preview.autoFit": false,
 	"svg.preview.autoShow": true,
