@@ -39,6 +39,8 @@
 	"editor.padding.bottom": 100,
 	"editor.renderWhitespace": "all",
 	"editor.scrollBeyondLastLine": false,
+	"editor.stickyScroll.enabled": true,
+	"editor.stickyScroll.maxLineCount": 5,
 	"editor.suggestSelection": "first",
 	"editor.wordWrap": "on",
 
@@ -113,6 +115,5 @@
 	"svg.preview.mode": "svg",
 	"svg.preview.showRuler": true,
 	"svg.preview.viewMode": "onlyOne",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"timeline.excludeSources": []
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
