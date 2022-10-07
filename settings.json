@@ -44,6 +44,10 @@
 	"editor.suggestSelection": "first",
 	"editor.wordWrap": "on",
 
+	"search.defaultViewMode": "tree",
+	"search.collapseResults": "alwaysExpand",
+	"search.showLineNumbers": true,
+
 	"errorLens.enabled": true,
 	"errorLens.statusBarIconsEnabled": true,
 
