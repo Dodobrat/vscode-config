@@ -21,6 +21,26 @@
 		}
 	},
 
+	"editor.tokenColorCustomizations": {
+		"[monokai-charcoal*]": {
+			"textMateRules": [
+				{
+					"scope": ["keyword.control.svelte", "entity.name.type.svelte"],
+					"settings": {
+						"foreground": "#A6E22E"
+					}
+				},
+				{
+					"scope": ["keyword.control.conditional.svelte"],
+					"settings": {
+						"foreground": "#A6E22E",
+						"fontStyle": "bold"
+					}
+				}
+			]
+		}
+	},
+
 	"editor.bracketPairColorization.enabled": true,
 	"editor.cursorBlinking": "solid",
 	"editor.cursorSmoothCaretAnimation": true,
@@ -112,7 +132,7 @@
 		"javascript": "javascriptreact"
 	},
 
-	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid"],
+	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid", "monokai"],
 	"svg.preview.autoFit": false,
 	"svg.preview.autoShow": true,
 	"svg.preview.background": "dark-transparent",
