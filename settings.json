@@ -1,10 +1,11 @@
 {
+	// Integrated Terminal
 	"terminal.integrated.defaultProfile.osx": "zsh",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 
+	// Workbench customization
 	"workbench.colorTheme": "monokai-charcoal (gray)",
 	"workbench.iconTheme": "material-icon-theme",
-
 	"workbench.colorCustomizations": {
 		"[monokai-charcoal*]": {
 			"activityBar.activeBackground": "#222",
@@ -21,26 +22,7 @@
 		}
 	},
 
-	"editor.tokenColorCustomizations": {
-		"[monokai-charcoal*]": {
-			"textMateRules": [
-				{
-					"scope": ["keyword.control.svelte", "entity.name.type.svelte"],
-					"settings": {
-						"foreground": "#A6E22E"
-					}
-				},
-				{
-					"scope": ["keyword.control.conditional.svelte"],
-					"settings": {
-						"foreground": "#A6E22E",
-						"fontStyle": "bold"
-					}
-				}
-			]
-		}
-	},
-
+	// Editor customization
 	"editor.bracketPairColorization.enabled": true,
 	"editor.cursorBlinking": "solid",
 	"editor.cursorSmoothCaretAnimation": true,
@@ -63,14 +45,32 @@
 	"editor.stickyScroll.maxLineCount": 5,
 	"editor.suggestSelection": "first",
 	"editor.wordWrap": "on",
+	"editor.tokenColorCustomizations": {
+		"[monokai-charcoal*]": {
+			"textMateRules": [
+				{
+					"scope": ["keyword.control.svelte", "entity.name.type.svelte"],
+					"settings": {
+						"foreground": "#A6E22E"
+					}
+				},
+				{
+					"scope": ["keyword.control.conditional.svelte"],
+					"settings": {
+						"foreground": "#A6E22E",
+						"fontStyle": "bold"
+					}
+				}
+			]
+		}
+	},
 
+	// Search
 	"search.defaultViewMode": "tree",
 	"search.collapseResults": "alwaysExpand",
 	"search.showLineNumbers": true,
 
-	"errorLens.enabled": true,
-	"errorLens.statusBarIconsEnabled": true,
-
+	// Breadcrumbs
 	"breadcrumbs.enabled": true,
 	"breadcrumbs.filePath": "on",
 	"breadcrumbs.icons": true,
@@ -103,8 +103,30 @@
 	"breadcrumbs.symbolPath": "off",
 	"breadcrumbs.symbolSortOrder": "name",
 
+	// Explorer
 	"explorer.confirmDelete": false,
 
+	// JS / TS
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+
+	// Svelte
+	"svelte.enable-ts-plugin": true,
+	"svelte.plugin.svelte.note-new-transformation": false,
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode" // TODO: update to prettier when available
+	},
+
+	// Version Control
+	"diffEditor.ignoreTrimWhitespace": false,
+	"diffEditor.renderSideBySide": true,
+	"git.confirmSync": true,
+	"git.enableSmartCommit": false,
+	"gitlens.advanced.messages": {
+		"suppressCreatePullRequestPrompt": true
+	},
+
+	// Prettier
 	"prettier.arrowParens": "always",
 	"prettier.bracketSpacing": true,
 	"prettier.endOfLine": "lf",
@@ -117,27 +139,25 @@
 	"prettier.trailingComma": "es5",
 	"prettier.useTabs": true,
 
-	"diffEditor.ignoreTrimWhitespace": false,
-	"diffEditor.renderSideBySide": true,
-	"gitlens.advanced.messages": {
-		"suppressCreatePullRequestPrompt": true
-	},
-	"git.confirmSync": true,
-	"git.enableSmartCommit": false,
-
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"typescript.updateImportsOnFileMove.enabled": "always",
-
+	// Emmet
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact"
 	},
 
+	// ErrorLens
+	"errorLens.enabled": true,
+	"errorLens.statusBarIconsEnabled": true,
+
+	// Other plugins
 	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid", "monokai"],
+	"cSpell.enableFiletypes": ["svelte"],
+
 	"svg.preview.autoFit": false,
 	"svg.preview.autoShow": true,
 	"svg.preview.background": "dark-transparent",
 	"svg.preview.mode": "svg",
 	"svg.preview.showRuler": true,
 	"svg.preview.viewMode": "onlyOne",
+
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
