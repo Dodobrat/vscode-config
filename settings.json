@@ -106,6 +106,9 @@
 	// Explorer
 	"explorer.confirmDelete": false,
 
+	// CSS
+	"css.lint.unknownAtRules": "ignore",
+
 	// JS / TS
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"typescript.updateImportsOnFileMove.enabled": "always",
