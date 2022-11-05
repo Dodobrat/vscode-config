@@ -156,7 +156,7 @@
 	"cSpell.enableFiletypes": ["svelte"],
 
 	"svg.preview.autoFit": false,
-	"svg.preview.autoShow": true,
+	"svg.preview.autoShow": false,
 	"svg.preview.background": "dark-transparent",
 	"svg.preview.mode": "svg",
 	"svg.preview.showRuler": true,
