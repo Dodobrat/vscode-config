@@ -6,6 +6,7 @@
 	// Workbench customization
 	"workbench.colorTheme": "monokai-charcoal (gray)",
 	"workbench.iconTheme": "material-icon-theme",
+	"workbench.productIconTheme": "fluent-icons",
 	"workbench.colorCustomizations": {
 		"[monokai-charcoal*]": {
 			"activityBar.activeBackground": "#222",
@@ -45,6 +46,7 @@
 	"editor.stickyScroll.maxLineCount": 5,
 	"editor.suggestSelection": "first",
 	"editor.wordWrap": "on",
+	"editor.largeFileOptimizations": false,
 	"editor.tokenColorCustomizations": {
 		"[monokai-charcoal*]": {
 			"textMateRules": [
@@ -105,6 +107,9 @@
 
 	// Explorer
 	"explorer.confirmDelete": false,
+	"explorer.autoRevealExclude": {
+		"**/node_modules": true
+	},
 
 	// CSS
 	"css.lint.unknownAtRules": "ignore",
@@ -152,7 +157,7 @@
 	"errorLens.statusBarIconsEnabled": true,
 
 	// Other plugins
-	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid", "monokai"],
+	"cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "monokai", "testid", "todos"],
 	"cSpell.enableFiletypes": ["svelte"],
 
 	"svg.preview.autoFit": false,
