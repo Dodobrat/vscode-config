@@ -268,7 +268,7 @@
     "Blue Component" : "0.8117647",
     "Red Component" : "0.4470588"
   },
-  "Window Type" : 15,
+  "Window Type" : 0,
   "Use Bright Bold" : true,
   "Cursor Text Color" : {
     "Green Component" : "0",
