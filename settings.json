@@ -2,29 +2,28 @@
   // Integrated Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-
-  // Window
-  "window.commandCenter": false,
-
-  // Zen Mode
-  "zenMode.hideTabs": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": false,
   // "zenMode.hideActivityBar": false,
+  "window.commandCenter": false,
 
   // Workbench
-  "workbench.productIconTheme": "fluent-icons",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.tabSizing": "fit",
+  "workbench.activityBar.location": "side",
   "workbench.editor.labelFormat": "short",
-  "workbench.tree.renderIndentGuides": "always",
-  "workbench.tree.indent": 16,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabSizing": "fit",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": true,
+  "workbench.productIconTheme": "fluent-icons",
   "workbench.sideBar.location": "left",
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
 
   // Accessibility
   // "accessibility.dimUnfocused.enabled": true,
 
   // Editor customization
+  "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -38,8 +37,10 @@
   "editor.guides.bracketPairs": "active",
   "editor.hover.delay": 500,
   "editor.inlineSuggest.enabled": true,
+  "editor.largeFileOptimizations": false,
   "editor.linkedEditing": true,
   "editor.multiCursorModifier": "ctrlCmd",
+  "editor.occurrencesHighlight": "multiFile",
   "editor.padding.bottom": 100,
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,
@@ -47,7 +48,9 @@
   "editor.stickyScroll.maxLineCount": 5,
   "editor.suggestSelection": "first",
   "editor.wordWrap": "on",
-  "editor.largeFileOptimizations": false,
+
+  // Terminal
+  "terminal.integrated.stickyScroll.enabled": true,
 
   // Search
   "search.defaultViewMode": "tree",
@@ -77,7 +80,6 @@
   // JS / TS
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "svelte.enable-ts-plugin": true,
 
   // Version Control
   "diffEditor.ignoreTrimWhitespace": false,
@@ -90,19 +92,6 @@
   "gitlens.advanced.messages": {
     "suppressCreatePullRequestPrompt": true
   },
-
-  // Prettier
-  "prettier.arrowParens": "always",
-  "prettier.bracketSpacing": true,
-  "prettier.endOfLine": "lf",
-  "prettier.jsxSingleQuote": true,
-  "prettier.printWidth": 140,
-  "prettier.quoteProps": "as-needed",
-  "prettier.semi": true,
-  "prettier.singleQuote": false,
-  "prettier.tabWidth": 2, // 4
-  "prettier.trailingComma": "es5",
-  "prettier.useTabs": false, // true
 
   // Emmet
   "emmet.includeLanguages": {
@@ -123,9 +112,5 @@
   "svg.preview.showRuler": true,
   "svg.preview.viewMode": "onlyOne",
 
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "editor.accessibilitySupport": "off"
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
