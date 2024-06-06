@@ -2,22 +2,35 @@
   // Integrated Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.stickyScroll.enabled": true,
+
+  // Zen
   "zenMode.hideLineNumbers": false,
   "zenMode.restore": false,
-  // "zenMode.hideActivityBar": false,
+
+  // Window
+  "window.systemColorTheme": "auto",
+  "window.titleBarStyle": "custom",
+  "window.title": "${rootName}",
+  "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
 
   // Workbench
-  "workbench.activityBar.location": "side",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.showTabs": "multiple",
+  "workbench.editor.showIcons": false,
   "workbench.editor.tabSizing": "fit",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.layoutControl.enabled": true,
-  "workbench.productIconTheme": "fluent-icons",
-  "workbench.sideBar.location": "left",
-  "workbench.tree.indent": 16,
+  "workbench.editor.pinnedTabSizing": "shrink",
+
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "top",
+
+  "workbench.iconTheme": "vs-seti",
+
+  "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.stickyScrollMaxItemCount": 10,
 
   // Accessibility
   // "accessibility.dimUnfocused.enabled": true,
@@ -26,13 +39,10 @@
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "solid",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.dragAndDrop": false,
   "editor.foldingImportsByDefault": false,
-  "editor.fontSize": 12,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
   "editor.hover.delay": 500,
@@ -48,9 +58,6 @@
   "editor.stickyScroll.maxLineCount": 5,
   "editor.suggestSelection": "first",
   "editor.wordWrap": "on",
-
-  // Terminal
-  "terminal.integrated.stickyScroll.enabled": true,
 
   // Search
   "search.defaultViewMode": "tree",
@@ -88,10 +95,7 @@
   "diffEditor.experimental.showMoves": true,
   "git.confirmSync": true,
   "git.enableSmartCommit": false,
-  "gitlens.graph.layout": "editor",
-  "gitlens.advanced.messages": {
-    "suppressCreatePullRequestPrompt": true
-  },
+  "gitlens.launchpad.indicator.enabled": false,
 
   // Emmet
   "emmet.includeLanguages": {
@@ -111,6 +115,14 @@
   "svg.preview.mode": "svg",
   "svg.preview.showRuler": true,
   "svg.preview.viewMode": "onlyOne",
+
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
