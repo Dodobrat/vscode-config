@@ -34,6 +34,10 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# ZSH COMPLETIONS - Run once to stop terminal prompt
+# chmod go-w $HOMEBREW_PREFIX/share
+# chmod -R go-w $HOMEBREW_PREFIX/share/zsh
+
 # FZF-TAB
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
