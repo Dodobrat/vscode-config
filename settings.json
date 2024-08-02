@@ -9,31 +9,33 @@
   "zenMode.restore": false,
 
   // Window
-  "window.systemColorTheme": "auto",
-  "window.titleBarStyle": "custom",
-  "window.title": "${rootName}",
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
+  "window.newWindowDimensions": "inherit",
+  "window.systemColorTheme": "auto",
+  "window.title": "${rootName}",
+  "window.titleBarStyle": "custom",
 
   // Workbench
-  "workbench.editor.labelFormat": "short",
-  "workbench.editor.showTabs": "multiple",
-  "workbench.editor.showIcons": false,
-  "workbench.editor.tabSizing": "fit",
-  "workbench.editor.pinnedTabSizing": "shrink",
-
-  "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "top",
-
-  "workbench.iconTheme": "vs-seti",
-
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.labelFormat": "default",
+  "workbench.editor.pinnedTabSizing": "normal",
+  "workbench.editor.showIcons": true,
+  "workbench.editor.tabSizing": "fit",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
+  "workbench.sideBar.location": "right",
+  "workbench.tips.enabled": false,
+  "workbench.tree.enableStickyScroll": true,
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
-  "workbench.tree.enableStickyScroll": true,
   "workbench.tree.stickyScrollMaxItemCount": 10,
 
   // Accessibility
   // "accessibility.dimUnfocused.enabled": true,
+  "accessibility.underlineLinks": true,
 
   // Editor customization
   "editor.accessibilitySupport": "off",
@@ -44,24 +46,32 @@
   "editor.dragAndDrop": false,
   "editor.foldingImportsByDefault": false,
   "editor.formatOnSave": true,
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.guides.bracketPairs": "active",
   "editor.hover.delay": 500,
   "editor.inlineSuggest.enabled": true,
   "editor.largeFileOptimizations": false,
+  "editor.lightbulb.enabled": "off",
   "editor.linkedEditing": true,
+  "editor.matchBrackets": "near",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.occurrencesHighlight": "multiFile",
   "editor.padding.bottom": 100,
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,
+  "editor.snippetSuggestions": "top",
   "editor.stickyScroll.enabled": true,
   "editor.stickyScroll.maxLineCount": 5,
   "editor.suggestSelection": "first",
   "editor.wordWrap": "on",
 
   // Search
-  "search.defaultViewMode": "tree",
   "search.collapseResults": "alwaysExpand",
+  "search.defaultViewMode": "tree",
   "search.showLineNumbers": true,
 
   // Breadcrumbs
@@ -71,12 +81,10 @@
   "breadcrumbs.symbolPath": "off",
 
   // Explorer
+  "explorer.autoRevealExclude": { "**/node_modules": true },
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.sortOrder": "filesFirst",
-  "explorer.compactFolders": false,
-  "explorer.autoRevealExclude": {
-    "**/node_modules": true
-  },
 
   // ESLint
   "eslint.workingDirectories": [{ "mode": "auto" }],
@@ -89,18 +97,16 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   // Version Control
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.experimental.showMoves": true,
   "git.confirmSync": true,
   "git.enableSmartCommit": false,
   "gitlens.launchpad.indicator.enabled": false,
 
   // Emmet
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
 
   // Plugins
   "errorLens.enabled": true,
@@ -117,7 +123,7 @@
   "svg.preview.viewMode": "onlyOne",
 
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
