@@ -10,23 +10,23 @@
 
   // Window
   "window.autoDetectColorScheme": true,
-  "window.commandCenter": false,
   "window.newWindowDimensions": "inherit",
   "window.systemColorTheme": "auto",
   "window.title": "${rootName}",
-  "window.titleBarStyle": "custom",
 
   // Workbench
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Default Dark+",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.labelFormat": "default",
   "workbench.editor.pinnedTabSizing": "normal",
   "workbench.editor.showIcons": true,
+  // "workbench.editor.showTabs": "none",
   "workbench.editor.tabSizing": "fit",
-  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-light",
+  "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
   "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.indent": 24,
@@ -40,11 +40,16 @@
   // Editor customization
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
+  "editor.colorDecorators": false,
+  "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "solid",
   "editor.cursorWidth": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.dragAndDrop": false,
   "editor.foldingImportsByDefault": false,
+  "editor.fontFamily": "Geist Mono",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.gotoLocation.multipleDeclarations": "goto",
   "editor.gotoLocation.multipleDefinitions": "goto",
@@ -75,16 +80,16 @@
   "search.showLineNumbers": true,
 
   // Breadcrumbs
-  "breadcrumbs.enabled": true,
-  "breadcrumbs.filePath": "on",
-  "breadcrumbs.icons": true,
-  "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.enabled": false,
+  // "breadcrumbs.enabled": true,
+  // "breadcrumbs.filePath": "on",
+  // "breadcrumbs.icons": true,
+  // "breadcrumbs.symbolPath": "off",
 
   // Explorer
   "explorer.autoRevealExclude": { "**/node_modules": true },
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
-  "explorer.sortOrder": "filesFirst",
 
   // ESLint
   "eslint.workingDirectories": [{ "mode": "auto" }],
@@ -110,14 +115,11 @@
 
   // Plugins
   "errorLens.enabled": true,
-  "errorLens.statusBarIconsEnabled": true,
 
-  "cSpell.userWords": ["Bozhilov", "Deyan", "dodobrat", "testid", "todos"],
-  "cSpell.enableFiletypes": ["svelte"],
+  "cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat", "testid"],
 
   "svg.preview.autoFit": false,
   "svg.preview.autoShow": false,
-  "svg.preview.background": "dark-transparent",
   "svg.preview.mode": "svg",
   "svg.preview.showRuler": true,
   "svg.preview.viewMode": "onlyOne",
@@ -128,7 +130,7 @@
     "markdown": false,
     "scminput": false
   },
-  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableAutoCompletions": false,
 
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "vscode_custom_css.imports": ["file:///Users/dodo/Documents/vscode/index.css"]
 }
