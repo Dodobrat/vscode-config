@@ -23,6 +23,11 @@
   font-weight: 600 !important;
 }
 
+/* Sidebar */
+.part.sidebar {
+  border-left: none !important;
+}
+
 /* File explorer title */
 .composite.title .title-label > h2 {
   font-family: var(--mono-font) !important;
@@ -34,13 +39,6 @@
   content: "👨‍💻";
   font-size: 0.875rem;
   margin-right: 0.25rem;
-}
-
-/* Scrollbar */
-.scrollbar.vertical .slider {
-  width: 0.125rem !important;
-  right: 0.125rem !important;
-  left: auto !important;
 }
 
 /* Project title's style at the top. */
@@ -81,6 +79,12 @@
   display: none !important;
 }
 
+/* Breadcrumbs */
+.breadcrumbs-below-tabs {
+  position: fixed;
+  bottom: 0;
+}
+
 /* Command palette */
 .quick-input-filter .monaco-inputbox {
   font-family: var(--mono-font) !important;
@@ -89,4 +93,13 @@
   padding: 0.5rem !important;
   border: none !important;
   margin-left: 0.125rem !important;
+}
+
+:is(.monaco-editor .sticky-widget, .monaco-tree-sticky-container-shadow, ) {
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--vscode-scrollbarSlider-background);
+}
+
+.monaco-editor .scroll-decoration {
+  box-shadow: none !important;
 }

@@ -22,9 +22,9 @@
   "workbench.editor.labelFormat": "default",
   "workbench.editor.pinnedTabSizing": "normal",
   "workbench.editor.showIcons": true,
-  // "workbench.editor.showTabs": "none",
   "workbench.editor.tabSizing": "fit",
   "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+  "workbench.preferredDarkColorTheme": "React Theme",
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
@@ -32,6 +32,7 @@
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.stickyScrollMaxItemCount": 10,
+  // "workbench.editor.showTabs": "none",
 
   // Accessibility
   // "accessibility.dimUnfocused.enabled": true,
@@ -63,6 +64,7 @@
   "editor.lightbulb.enabled": "off",
   "editor.linkedEditing": true,
   "editor.matchBrackets": "near",
+  "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.occurrencesHighlight": "multiFile",
   "editor.padding.bottom": 100,
