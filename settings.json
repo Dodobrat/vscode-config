@@ -15,7 +15,7 @@
   "window.title": "${rootName}",
 
   // Workbench
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "bottom",
   "workbench.colorTheme": "Default Dark+",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,

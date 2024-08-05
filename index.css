@@ -72,7 +72,6 @@
 
 :is(
     .titlebar-right .action-item.menu-entry,
-    .part.sidebar .composite.header,
     .codicon-arrow-right,
     .codicon-arrow-left,
     .search-icon
@@ -101,6 +100,6 @@
   border-bottom: 1px solid var(--vscode-scrollbarSlider-background);
 }
 
-.monaco-editor .scroll-decoration {
+:is(.monaco-editor .scroll-decoration, .mac .shadow.top) {
   box-shadow: none !important;
 }
