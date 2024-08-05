@@ -71,7 +71,8 @@
 }
 
 :is(
-    .titlebar-right > *,
+    .titlebar-right .action-item.menu-entry,
+    .part.sidebar .composite.header,
     .codicon-arrow-right,
     .codicon-arrow-left,
     .search-icon
@@ -95,7 +96,7 @@
   margin-left: 0.125rem !important;
 }
 
-:is(.monaco-editor .sticky-widget, .monaco-tree-sticky-container-shadow, ) {
+:is(.monaco-editor .sticky-widget, .monaco-tree-sticky-container-shadow) {
   box-shadow: none !important;
   border-bottom: 1px solid var(--vscode-scrollbarSlider-background);
 }
