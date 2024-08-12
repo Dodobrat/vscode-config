@@ -2,7 +2,11 @@
   // Integrated Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.fontFamily": "Geist Mono",
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.tabs.enabled": false,
 
   // Zen
   "zenMode.hideLineNumbers": false,
@@ -10,12 +14,14 @@
 
   // Window
   "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.customTitleBarVisibility": "never",
   "window.newWindowDimensions": "inherit",
   "window.systemColorTheme": "auto",
-  "window.title": "${rootName}",
+  "window.titleBarStyle": "native",
 
   // Workbench
-  "workbench.activityBar.location": "bottom",
+  "workbench.activityBar.location": "default",
   "workbench.colorTheme": "Default Dark+",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -24,6 +30,7 @@
   "workbench.editor.showIcons": true,
   "workbench.editor.tabSizing": "fit",
   "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
+  "workbench.layoutControl.enabled": false,
   "workbench.preferredDarkColorTheme": "React Theme",
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
@@ -41,9 +48,11 @@
   // Editor customization
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
+  "editor.codeLensFontFamily": "Geist Mono",
   "editor.colorDecorators": false,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorWidth": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.dragAndDrop": false,
@@ -59,6 +68,7 @@
   "editor.gotoLocation.multipleTypeDefinitions": "goto",
   "editor.guides.bracketPairs": "active",
   "editor.hover.delay": 500,
+  "editor.inlayHints.fontFamily": "Geist Mono",
   "editor.inlineSuggest.enabled": true,
   "editor.largeFileOptimizations": false,
   "editor.lightbulb.enabled": "off",
@@ -67,8 +77,10 @@
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.occurrencesHighlight": "multiFile",
+  "editor.overviewRulerBorder": false,
   "editor.padding.bottom": 100,
   "editor.renderWhitespace": "all",
+  "editor.scrollbar.horizontal": "hidden",
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "top",
   "editor.stickyScroll.enabled": true,
@@ -112,11 +124,11 @@
   "git.enableSmartCommit": false,
   "gitlens.launchpad.indicator.enabled": false,
 
-  // Emmet
-  "emmet.includeLanguages": { "javascript": "javascriptreact" },
-
   // Plugins
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
   "errorLens.enabled": true,
+
+  "console-ninja.featureSet": "Community",
 
   "cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat", "testid"],
 
@@ -134,5 +146,76 @@
   },
   "github.copilot.editor.enableAutoCompletions": false,
 
-  "vscode_custom_css.imports": ["file:///Users/dodo/Documents/vscode/index.css"]
+  "apc.monospace.font.family": "Geist Mono",
+  "apc.font.family": "Geist Mono",
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 10,
+      "y": 10
+    }
+  },
+  "apc.activityBar": {
+    "position": "bottom",
+    "size": 35
+  },
+  "apc.listRow": {
+    "fontSize": 14
+  },
+  "apc.header": {
+    "fontSize": 14
+  },
+  "apc.stylesheet": {
+    // tabs container
+    ".title": {
+      "--title-border-bottom-color": "var(--vscode-scrollbarSlider-background) !important"
+    },
+    // sidebar title
+    ".composite.title": {
+      "border-bottom": "thin solid var(--vscode-scrollbarSlider-background)"
+    },
+    // sidebar border + bottom activity bar border + collapse panels
+    ":is(.part.sidebar, .activitybar, .pane-header)": {
+      "--vscode-sideBar-border": "var(--vscode-scrollbarSlider-background)",
+      "border-color": "var(--vscode-sideBar-border) !important"
+    },
+    // sidebar panels inputs
+    ":is(.monaco-inputbox, .scm-editor, .suggest-input-container)": {
+      "border": "none !important",
+      "outline": "transparent !important"
+    },
+    // sidebar panels inputs border styles
+    ":is(.input, .scm-editor, .suggest-input-container)": {
+      "border": "thin solid var(--vscode-scrollbarSlider-background) !important"
+    },
+    // sidebar file
+    ".monaco-tree-sticky-container-shadow": {
+      "bottom": "-1px !important"
+    },
+    // lists + sidebar title + tabs labels
+    ":is(.monaco-list-row, .label-name, .title-label > *)": {
+      "font-weight": "bold !important"
+    },
+    // right to tabs file actions
+    ".editor-actions": {
+      "outline-color": "var(--vscode-scrollbarSlider-background) !important"
+    },
+    // command palette input
+    ".quick-input-filter .monaco-inputbox": {
+      "font-size": "1.5rem !important",
+      "border-radius": "0.25rem !important",
+      "padding": "0.5rem !important",
+      "border": "none !important",
+      "margin-left": "0.125rem !important"
+    },
+    // sticky shadows
+    ":is(.monaco-editor .sticky-widget, .monaco-tree-sticky-container-shadow)": {
+      "box-shadow": "none !important",
+      "border-bottom": "1px solid var(--vscode-scrollbarSlider-background)"
+    },
+    // more shadows
+    ":is(.monaco-editor .scroll-decoration, .mac .shadow.top, .quick-input-widget.show-file-icons, .editor-widget.find-widget)": {
+      "box-shadow": "none !important"
+    }
+  }
 }
