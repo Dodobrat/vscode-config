@@ -13,7 +13,6 @@
   "zenMode.restore": false,
 
   // Window
-  "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "never",
   "window.newWindowDimensions": "inherit",
@@ -22,7 +21,7 @@
 
   // Workbench
   "workbench.activityBar.location": "default",
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Default Dark Modern",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.labelFormat": "default",
@@ -31,7 +30,6 @@
   "workbench.editor.tabSizing": "fit",
   "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-auto",
   "workbench.layoutControl.enabled": false,
-  "workbench.preferredDarkColorTheme": "React Theme",
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
@@ -40,6 +38,27 @@
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.stickyScrollMaxItemCount": 10,
   // "workbench.editor.showTabs": "none",
+
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "tab.activeBorderTop": "#fff",
+      "tab.inactiveBackground": "#1f1f1f",
+      "editorGroupHeader.tabsBackground": "#1f1f1f",
+      "welcomePage.background": "#1f1f1f",
+      "sideBar.background": "#1f1f1f",
+      "activityBar.background": "#1f1f1f",
+      "terminal.background": "#1f1f1f"
+    },
+    "[Default Light Modern]": {
+      "tab.activeBorderTop": "#000",
+      "tab.inactiveBackground": "#fff",
+      "editorGroupHeader.tabsBackground": "#fff",
+      "welcomePage.background": "#fff",
+      "sideBar.background": "#fff",
+      "activityBar.background": "#fff",
+      "terminal.background": "#fff"
+    }
+  },
 
   // Accessibility
   // "accessibility.dimUnfocused.enabled": true,
@@ -119,24 +138,15 @@
   "diffEditor.experimental.showMoves": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": true,
-  "git.confirmSync": true,
-  "git.enableSmartCommit": false,
   "gitlens.launchpad.indicator.enabled": false,
 
   // Plugins
-  "emmet.includeLanguages": { "javascript": "javascriptreact" },
-  "errorLens.enabled": true,
-
   "console-ninja.featureSet": "Community",
 
   "cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat", "testid"],
 
   "svg.preview.autoFit": false,
-  "svg.preview.autoShow": false,
-  "svg.preview.mode": "svg",
-  "svg.preview.showRuler": true,
-  "svg.preview.viewMode": "onlyOne",
+  "svg.preview.showRuler": false,
 
   "github.copilot.enable": {
     "*": false,
@@ -150,72 +160,23 @@
   "apc.font.family": "Geist Mono",
   "apc.electron": {
     "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 10,
-      "y": 10
-    }
+    "trafficLightPosition": { "x": 10, "y": 10 }
   },
-  "apc.activityBar": {
-    "position": "bottom",
-    "size": 35
-  },
-  "apc.listRow": {
-    "fontSize": 14
-  },
-  "apc.header": {
-    "fontSize": 14
-  },
+  "apc.activityBar": { "position": "bottom", "size": 35 },
+  "apc.listRow": { "fontSize": 14 },
+  "apc.header": { "fontSize": 14 },
   "apc.stylesheet": {
-    // tabs container
-    ".title": {
-      "--title-border-bottom-color": "var(--vscode-scrollbarSlider-background) !important"
-    },
-    // sidebar title
-    ".composite.title": {
-      "border-bottom": "thin solid var(--vscode-scrollbarSlider-background)"
-    },
-    // sidebar border + bottom activity bar border + collapse panels
-    ":is(.part.sidebar, .activitybar, .pane-header)": {
-      "--vscode-sideBar-border": "var(--vscode-scrollbarSlider-background)",
-      "border-color": "var(--vscode-sideBar-border) !important"
-    },
-    // sidebar panels inputs
-    ":is(.monaco-inputbox, .scm-editor, .suggest-input-container)": {
-      "border": "none !important",
-      "outline": "transparent !important"
-    },
-    // sidebar panels inputs border styles
-    ":is(.input, .scm-editor, .suggest-input-container)": {
-      "border": "thin solid var(--vscode-scrollbarSlider-background) !important"
-    },
-    // sidebar file
-    ".monaco-tree-sticky-container-shadow": {
-      "bottom": "-1px !important"
-    },
-    // lists + sidebar title + tabs labels
-    ":is(.monaco-list-row, .label-name, .title-label > *)": {
-      "font-weight": "bold !important"
-    },
-    // right to tabs file actions
-    ".editor-actions": {
-      "outline-color": "var(--vscode-scrollbarSlider-background) !important"
+    // command palette wrapper
+    ".quick-input-widget": {
+      "width": "max(600px, 50vw) !important",
+      "margin-left": "0 !important",
+      "translate": "-50%"
     },
     // command palette input
-    ".quick-input-filter .monaco-inputbox": {
-      "font-size": "1.5rem !important",
-      "border-radius": "0.25rem !important",
-      "padding": "0.5rem !important",
-      "border": "none !important",
-      "margin-left": "0.125rem !important"
-    },
-    // sticky shadows
-    ":is(.monaco-editor .sticky-widget, .monaco-tree-sticky-container-shadow)": {
-      "box-shadow": "none !important",
-      "border-bottom": "1px solid var(--vscode-scrollbarSlider-background)"
-    },
-    // more shadows
-    ":is(.monaco-editor .scroll-decoration, .mac .shadow.top, .quick-input-widget.show-file-icons, .editor-widget.find-widget)": {
-      "box-shadow": "none !important"
+    ".quick-input-filter .monaco-inputbox input": {
+      "font-size": "1.25rem !important",
+      "font-weight": "bold !important",
+      "padding": "0.5rem !important"
     }
   }
 }
