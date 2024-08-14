@@ -104,8 +104,6 @@
   "editor.snippetSuggestions": "top",
   "editor.stickyScroll.enabled": true,
   "editor.stickyScroll.maxLineCount": 5,
-  "editor.suggestSelection": "first",
-  "editor.wordWrap": "on",
 
   // Search
   "search.collapseResults": "alwaysExpand",
