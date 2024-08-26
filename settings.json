@@ -21,7 +21,6 @@
 
   // Workbench
   "workbench.activityBar.location": "default",
-  "workbench.colorTheme": "Default Dark Modern",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.labelFormat": "default",
@@ -101,7 +100,6 @@
   "editor.renderWhitespace": "all",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollBeyondLastLine": false,
-  "editor.snippetSuggestions": "top",
   "editor.stickyScroll.enabled": true,
   "editor.stickyScroll.maxLineCount": 5,
 
@@ -111,11 +109,10 @@
   "search.showLineNumbers": true,
 
   // Breadcrumbs
-  "breadcrumbs.enabled": false,
-  // "breadcrumbs.enabled": true,
-  // "breadcrumbs.filePath": "on",
-  // "breadcrumbs.icons": true,
-  // "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.filePath": "on",
+  "breadcrumbs.icons": true,
+  "breadcrumbs.symbolPath": "off",
 
   // Explorer
   "explorer.autoRevealExclude": { "**/node_modules": true },
@@ -139,8 +136,6 @@
   "gitlens.launchpad.indicator.enabled": false,
 
   // Plugins
-  "console-ninja.featureSet": "Community",
-
   "cSpell.userWords": ["Deyan", "Bozhilov", "dodobrat", "testid"],
 
   "svg.preview.autoFit": false,
@@ -164,6 +159,11 @@
   "apc.listRow": { "fontSize": 14 },
   "apc.header": { "fontSize": 14 },
   "apc.stylesheet": {
+    // bottom breadcrumbs
+    ".breadcrumbs-below-tabs": {
+      "position": "fixed",
+      "bottom": "0"
+    },
     // command palette wrapper
     ".quick-input-widget": {
       "width": "max(600px, 50vw) !important",
