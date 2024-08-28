@@ -1,14 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # RUBY
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
@@ -34,10 +23,6 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# ZSH COMPLETIONS - Run once to stop terminal prompt
-# chmod go-w $HOMEBREW_PREFIX/share
-# chmod -R go-w $HOMEBREW_PREFIX/share/zsh
-
 # FZF-TAB
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
@@ -60,6 +45,66 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview  'ls --color $realpath'
 
 alias ls='ls --color'
+
+# GIT
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:*' enable git
+
+COLOR_DEF=$'%f'
+# COLOR_USR=$'%F{243}'
+COLOR_DIR=$'%F{155}'
+COLOR_GIT=$'%F{39}'
+COLOR_GIT_INFO=$'%F{208}'
+
+# Function to get additional git info
+git_prompt_info() {
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    local branch stash_count ahead behind staged unstaged
+    local git_info=""
+
+    # Get branch name
+    branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+
+    # Get stash count
+    stash_count=$(git stash list 2>/dev/null | wc -l)
+    
+    # Get ahead/behind info
+    ahead_behind=$(git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null)
+    ahead=$(echo $ahead_behind | awk '{print $2}')
+    behind=$(echo $ahead_behind | awk '{print $1}')
+    
+    # Get staged and unstaged files count
+    staged=$(git diff --cached --name-only 2>/dev/null | wc -l)
+    unstaged=$(git status --porcelain 2>/dev/null | wc -l)
+    unstaged=$((unstaged - staged))
+
+    # Build the git_info string with exact spacing
+    local parts=()
+    
+    [ "$stash_count" -gt 0 ] && parts+=("$stash_count*")
+    [ "$behind" -gt 0 ] && parts+=("$behind↓")
+    [ "$ahead" -gt 0 ] && parts+=("$ahead↑")
+    [ "$unstaged" -gt 0 ] && parts+=("$unstaged?")
+    [ "$staged" -gt 0 ] && parts+=("$staged!")
+
+    # Join parts with single spaces and trim any extra spaces
+    git_info=$(printf '%s\n' "${parts[@]}" | xargs | sed 's/ $//')
+
+    # Return git info in orange
+    if [ -n "$git_info" ]; then
+      echo " ${COLOR_GIT}[$branch] ${COLOR_GIT_INFO}$git_info"
+    else
+      echo " ${COLOR_GIT}[$branch]"
+    fi
+  fi
+}
+
+setopt PROMPT_SUBST
+# export PROMPT=' ${COLOR_USR}%n ${COLOR_DIR}%~$(git_prompt_info) ${COLOR_DEF}$ '
+export PROMPT=' ${COLOR_DIR}%~$(git_prompt_info) ${COLOR_DEF}$ '
 
 #EI VPN setup with openconnect
 function vpn-up() {

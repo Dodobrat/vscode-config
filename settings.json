@@ -110,8 +110,6 @@
 
   // Breadcrumbs
   "breadcrumbs.enabled": true,
-  "breadcrumbs.filePath": "on",
-  "breadcrumbs.icons": true,
   "breadcrumbs.symbolPath": "off",
 
   // Explorer
