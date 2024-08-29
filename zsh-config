@@ -54,7 +54,7 @@ zstyle ':vcs_info:git:*' formats '%b'
 zstyle ':vcs_info:*' enable git
 
 COLOR_DEF=$'%f'
-# COLOR_USR=$'%F{243}'
+COLOR_USR=$'%F{243}'
 COLOR_DIR=$'%F{155}'
 COLOR_GIT=$'%F{39}'
 COLOR_GIT_INFO=$'%F{208}'
@@ -103,8 +103,13 @@ git_prompt_info() {
 }
 
 setopt PROMPT_SUBST
-# export PROMPT=' ${COLOR_USR}%n ${COLOR_DIR}%~$(git_prompt_info) ${COLOR_DEF}$ '
-export PROMPT=' ${COLOR_DIR}%~$(git_prompt_info) ${COLOR_DEF}$ '
+export PROMPT='
+%F${COLOR_USR}%*%f ${COLOR_DIR}%~$(git_prompt_info)
+${COLOR_DEF}$ '
+# export RPROMPT='%F{green}%*%f'
+# export PROMPT='
+# %F{green}%*%f ${COLOR_USR}%n ${COLOR_DIR}%~$(git_prompt_info)
+# ${COLOR_DEF}$ '
 
 #EI VPN setup with openconnect
 function vpn-up() {
