@@ -157,9 +157,13 @@
   "apc.listRow": { "fontSize": 14 },
   "apc.header": { "fontSize": 14 },
   "apc.stylesheet": {
+    // tabs
+    ".title.tabs": {
+      "position": "static !important"
+    },
     // bottom breadcrumbs
     ".breadcrumbs-below-tabs": {
-      "position": "fixed",
+      "position": "absolute",
       "bottom": "0"
     },
     // command palette wrapper
