@@ -1,55 +1,83 @@
-# RUBY
+# ------------------------------------------------------------------------------
+# 1. ENVIRONMENT & PATHS (Static is faster than eval)
+# ------------------------------------------------------------------------------
+export HOMEBREW_PREFIX="/opt/homebrew"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export FPATH="/Users/dodo/.zsh/completions:$(brew --prefix)/share/zsh-completions:$FPATH"
+
+# RUBY OPTIMIZATION
+# We set the path manually to avoid calling the 'gem' binary on every startup.
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  # This finds the current Homebrew ruby gem bin without running the slow 'gem' command
+  export PATH="$(echo /opt/homebrew/lib/ruby/gems/*/bin | awk '{print $NF}'):$PATH"
 fi
 
-# NVM
+# JAVA & ANDROID
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools"
+
+# ------------------------------------------------------------------------------
+# 2. LAZY LOADING (The speed secret)
+# ------------------------------------------------------------------------------
+# NVM: Only loads when you actually type 'node', 'npm', or 'nvm'
 export NVM_DIR="$HOME/.nvm"
-    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-    [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+nvm() {
+  unset -f nvm node npm npx
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+  nvm "$@"
+}
+node() { nvm >/dev/null; node "$@" }
+npm() { nvm >/dev/null; npm "$@" }
+npx() { nvm >/dev/null; npx "$@" }
 
-# FUZZY FINDER
-source <(fzf --zsh)
-
-# ZSH AUTOSUGGESTIONS
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# ZSH COMPLETIONS
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
+# ------------------------------------------------------------------------------
+# 3. COMPLETIONS & PLUGINS
+# ------------------------------------------------------------------------------
+# Fast compinit: only regenerates cache once a day
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
+  compinit -C
+else
   compinit
 fi
 
-# FZF-TAB
+source <(fzf --zsh)
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
+# ------------------------------------------------------------------------------
+# 4. BETTER SUGGESTIONS & UI TWEAKS
+# ------------------------------------------------------------------------------
+# Strategy: Try to predict based on history, then the completion engine
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_dups
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_find_no_dups
-
+# Case-insensitive tab completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview  'ls --color $realpath'
 
+# FZF-Tab: Rich previews for the tools you use
+# Preview directories with 'ls' and files with 'cat' (or 'bat' if you have it)
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1F --color $realpath'
+zstyle ':fzf-tab:complete:*:*' fzf-preview '[[ -d $realpath ]] && ls -1F --color $realpath || cat $realpath'
+
+# ------------------------------------------------------------------------------
+# 5. HISTORY & ALIASES
+# ------------------------------------------------------------------------------
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups hist_save_no_dups
 alias ls='ls --color'
 
-# GIT
+# ------------------------------------------------------------------------------
+# 6. PROMPT (Restored Git Info)
+# ------------------------------------------------------------------------------
 autoload -Uz vcs_info
 precmd() { vcs_info }
-
 zstyle ':vcs_info:git:*' formats '%b'
 zstyle ':vcs_info:*' enable git
 
@@ -59,41 +87,45 @@ COLOR_DIR=$'%F{155}'
 COLOR_GIT=$'%F{39}'
 COLOR_GIT_INFO=$'%F{208}'
 
-# Function to get additional git info
 git_prompt_info() {
   if git rev-parse --is-inside-work-tree &>/dev/null; then
-    local branch stash_count ahead behind staged unstaged
+    local branch stash_count ahead_behind ahead behind staged unstaged untracked
     local git_info=""
 
-    # Get branch name
+    # 1. Get branch name
     branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 
-    # Get stash count
-    stash_count=$(git stash list 2>/dev/null | wc -l)
-    
-    # Get ahead/behind info
+    # 2. Get stash count
+    stash_count=$(git stash list 2>/dev/null | wc -l | tr -d ' ')
+
+    # 3. Get ahead/behind info
     ahead_behind=$(git rev-list --left-right --count @{upstream}...HEAD 2>/dev/null)
-    ahead=$(echo $ahead_behind | awk '{print $2}')
-    behind=$(echo $ahead_behind | awk '{print $1}')
-    
-    # Get staged and unstaged files count
-    staged=$(git diff --cached --name-only 2>/dev/null | wc -l)
-    unstaged=$(git status --porcelain 2>/dev/null | wc -l)
-    unstaged=$((unstaged - staged))
+    if [ -n "$ahead_behind" ]; then
+      behind=$(echo $ahead_behind | awk '{print $1}')
+      ahead=$(echo $ahead_behind | awk '{print $2}')
+    fi
 
-    # Build the git_info string with exact spacing
+    # 4. Get file statuses
+    # Staged: Files in the index
+    staged=$(git diff --cached --name-only 2>/dev/null | wc -l | tr -d ' ')
+
+    # Unstaged: Modified files not yet staged
+    unstaged=$(git diff --name-only 2>/dev/null | wc -l | tr -d ' ')
+
+    # Untracked: New files not yet tracked
+    untracked=$(git ls-files --others --exclude-standard 2>/dev/null | wc -l | tr -d ' ')
+
+    # Build the display string
     local parts=()
-    
-    [ "$stash_count" -gt 0 ] && parts+=("$stash_count*")
-    [ "$behind" -gt 0 ] && parts+=("$behind↓")
-    [ "$ahead" -gt 0 ] && parts+=("$ahead↑")
-    [ "$unstaged" -gt 0 ] && parts+=("$unstaged?")
-    [ "$staged" -gt 0 ] && parts+=("$staged!")
+    [ "$stash_count" -gt 0 ] && parts+=("${stash_count}*")
+    [ "$behind" -gt "0" ]    && parts+=("${behind}↓")
+    [ "$ahead" -gt "0" ]     && parts+=("${ahead}↑")
+    [ "$unstaged" -gt "0" ]  && parts+=("${unstaged}?")
+    [ "$untracked" -gt "0" ] && parts+=("${untracked}±")
+    [ "$staged" -gt "0" ]    && parts+=("${staged}!")
 
-    # Join parts with single spaces and trim any extra spaces
-    git_info=$(printf '%s\n' "${parts[@]}" | xargs | sed 's/ $//')
+    git_info="${parts[*]}"
 
-    # Return git info in orange
     if [ -n "$git_info" ]; then
       echo " ${COLOR_GIT}[$branch] ${COLOR_GIT_INFO}$git_info"
     else
@@ -106,21 +138,3 @@ setopt PROMPT_SUBST
 export PROMPT='
 %F${COLOR_USR}%*%f ${COLOR_DIR}%~$(git_prompt_info)
 ${COLOR_DEF}$ '
-# export RPROMPT='%F{green}%*%f'
-# export PROMPT='
-# %F{green}%*%f ${COLOR_USR}%n ${COLOR_DIR}%~$(git_prompt_info)
-# ${COLOR_DEF}$ '
-
-#EI VPN setup with openconnect
-function vpn-up() {
-  echo "Starting the vpn ..."
-  # Optional flag if you want to run it in the background and do work in the same terminal
-  # The vpn-down function can be used to stop the vpn, otherwise without the background flag you can just ctrl+c
-  # --background
-  sudo openconnect --user=BozhiDe --protocol=anyconnect -c /Users/dodo/Documents/BozhiDe.p12 --key-password=12345678 --server=vpn.aerlingus.com
-}
- 
-function vpn-down() {
-  echo "Stopping the vpn ..."
-  sudo kill -2 `pgrep openconnect`
-}
